@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AbdSobur — GoHighLevel Automation Portfolio</title>
+<meta name="description" content="A lead capture and nurture system built in GoHighLevel — from form submission through automated email and SMS follow-up, to a booked appointment or converted opportunity.">
+<style>
+  :root{
+    --ink:#0b0d17;
+    --panel:#121527;
+    --bg:#f5f6f8;
+    --card:#ffffff;
+    --border:#e6e7eb;
+    --muted:#5b5f6b;
+    --accent:#5b5fe9;
+    --accent-soft:#eceafd;
+    --good:#1f9d6c;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+  }
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(115deg,#05060c 0%,#0b0d17 38%,#3c3fb8 100%);
+    color:#fff;
+    padding:56px 0 0;
+  }
+  .hero-top{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-bottom:40px;
+  }
+  .brand{font-weight:700;font-size:15px;color:#fff;}
+  .brand span{color:#a9acc9;font-weight:400;}
+  .pill{
+    border:1px solid rgba(255,255,255,.22);
+    background:rgba(255,255,255,.06);
+    color:#dcdcf4;
+    padding:7px 16px;
+    border-radius:999px;
+    font-size:13px;
+  }
+  .hero h1{
+    font-size:44px;
+    line-height:1.14;
+    font-weight:800;
+    margin:0 0 20px;
+    max-width:680px;
+    letter-spacing:-0.01em;
+  }
+  .hero p.lede{
+    font-size:17px;
+    color:#c7c9de;
+    max-width:600px;
+    margin:0 0 28px;
+  }
+  .tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;}
+  .tag{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+    color:#e7e7f4;
+    padding:9px 16px;
+    border-radius:10px;
+    font-size:14px;
+  }
+
+  /* Stats card overlapping hero/body */
+  .stats{
+    background:var(--card);
+    border-radius:18px 18px 0 0;
+    box-shadow:0 -1px 0 rgba(0,0,0,.02);
+    padding:8px 0 4px;
+  }
+  .stats-inner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+  }
+  .stat{padding:28px 32px;border-bottom:1px solid var(--border);}
+  .stat:nth-child(odd){border-right:1px solid var(--border);}
+  .stat .num{font-size:30px;font-weight:800;margin:0 0 6px;letter-spacing:-0.02em;}
+  .stat .desc{color:var(--muted);font-size:14.5px;margin:0;}
+
+  @media (max-width:640px){
+    .stats-inner{grid-template-columns:1fr;}
+    .stat:nth-child(odd){border-right:none;}
+  }
+
+  /* Body sections */
+  main{background:var(--bg);}
+  section.numbered{padding:64px 0 8px;}
+  .kicker{
+    display:flex;align-items:baseline;gap:12px;margin-bottom:14px;
+  }
+  .kicker .n{color:var(--accent);font-weight:700;font-size:14px;}
+  .kicker h2{font-size:24px;margin:0;font-weight:800;letter-spacing:-0.01em;}
+  section.numbered > p{
+    color:var(--muted);
+    font-size:16px;
+    max-width:640px;
+    margin:0 0 28px;
+  }
+
+  /* How it works grid */
+  .flow-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    background:var(--card);
+    margin-bottom:16px;
+  }
+  .flow-grid .cell{padding:22px 20px;border-right:1px solid var(--border);}
+  .flow-grid .cell:last-child{border-right:none;}
+  .flow-grid .eyebrow{color:var(--accent);font-weight:700;font-size:12.5px;margin-bottom:10px;}
+  .flow-grid h3{font-size:17px;margin:0 0 8px;font-weight:700;}
+  .flow-grid p{font-size:14px;color:var(--muted);margin:0;}
+
+  @media (max-width:760px){
+    .flow-grid{grid-template-columns:1fr 1fr;}
+    .flow-grid .cell{border-bottom:1px solid var(--border);}
+    .flow-grid .cell:nth-child(2n){border-right:none;}
+  }
+  @media (max-width:480px){
+    .flow-grid{grid-template-columns:1fr;}
+  }
+
+  /* Workflow screenshot card */
+  .workflow-card{
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:var(--card);
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .workflow-card .wf-head{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 24px;
+  }
+  .workflow-card .wf-head h3{font-size:16px;margin:0;font-weight:700;}
+  .live-pill{
+    background:var(--accent-soft);
+    color:var(--accent);
+    font-size:12.5px;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .workflow-card img{width:100%;border-top:1px solid var(--border);}
+
+  .captions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-bottom:48px;
+  }
+  .caption{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;
+    padding:18px 20px;
+  }
+  .caption h4{margin:0 0 6px;font-size:15px;font-weight:700;}
+  .caption p{margin:0;font-size:14px;color:var(--muted);}
+  @media (max-width:640px){
+    .captions{grid-template-columns:1fr;}
+  }
+
+  /* Closing panel */
+  .closing{
+    background:var(--panel);
+    color:#fff;
+    border-radius:18px;
+    padding:40px;
+    margin:24px 0 48px;
+  }
+  .closing h3{font-size:22px;margin:0 0 14px;font-weight:800;}
+  .closing > p{color:#b9bbd4;font-size:15.5px;max-width:700px;margin:0 0 22px;}
+  .closing ul{list-style:none;margin:0;padding:0;}
+  .closing li{
+    padding:14px 0;
+    border-top:1px solid rgba(255,255,255,.1);
+    font-size:15px;
+    color:#eceefb;
+    display:flex;
+    gap:10px;
+  }
+  .closing li::before{content:"+";color:var(--good);font-weight:700;}
+
+  footer{
+    border-top:1px solid var(--border);
+    padding:28px 0 60px;
+    display:flex;justify-content:space-between;align-items:flex-start;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  footer .name{font-weight:800;font-size:16px;margin:0 0 4px;}
+  footer .role{color:var(--muted);font-size:14px;margin:0;}
+  footer .right{text-align:right;color:var(--muted);font-size:14px;line-height:1.6;}
+  @media (max-width:480px){
+    footer{flex-direction:column;}
+    footer .right{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="brand">AbdSobur <span>/ The Uptrenders</span></div>
+      <div class="pill">GoHighLevel Automation</div>
+    </div>
+    <h1>Turning form fills into booked clients, automatically.</h1>
+    <p class="lede">A lead capture and nurture system built in GoHighLevel — from the moment someone submits a form, through automated email and SMS follow-up, to a booked appointment or converted opportunity.</p>
+    <div class="tags">
+      <span class="tag">Form Builder</span>
+      <span class="tag">Workflow Automation</span>
+      <span class="tag">Email + SMS Sequencing</span>
+      <span class="tag">Conditional Branching</span>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat">
+        <p class="num">100%</p>
+        <p class="desc">of new leads enrolled automatically — zero manual follow-up</p>
+      </div>
+      <div class="stat">
+        <p class="num">2</p>
+        <p class="desc">channels working together: email and SMS, in the same sequence</p>
+      </div>
+      <div class="stat">
+        <p class="num">24h</p>
+        <p class="desc">response window before a lead is escalated to the team</p>
+      </div>
+      <div class="stat">
+        <p class="num">Branching</p>
+        <p class="desc">logic that reacts to opens, bookings, and tags in real time</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <section class="numbered">
+      <div class="kicker"><span class="n">01</span><h2>How the system works</h2></div>
+      <p>Every workflow follows the same backbone: capture the lead, notify the right person, and keep following up until the lead either responds or is handed off — with no gaps for a lead to fall through.</p>
+      <div class="flow-grid">
+        <div class="cell">
+          <div class="eyebrow">CAPTURE</div>
+          <h3>Form submitted</h3>
+          <p>A custom GoHighLevel form (quote request, booking, popup, or ad lead) triggers the workflow the instant it's submitted.</p>
+        </div>
+        <div class="cell">
+          <div class="eyebrow">ROUTE</div>
+          <h3>Notify &amp; assign</h3>
+          <p>The opportunity is moved to the right pipeline stage, a task is created, and the lead is assigned to the correct team member.</p>
+        </div>
+        <div class="cell">
+          <div class="eyebrow">NURTURE</div>
+          <h3>Email + SMS sequence</h3>
+          <p>Confirmation, thank-you, and follow-up messages go out automatically across both channels on a set schedule.</p>
+        </div>
+        <div class="cell">
+          <div class="eyebrow">ADAPT</div>
+          <h3>Branch on behaviour</h3>
+          <p>The workflow checks whether the lead opened an email or booked a call, then branches into a different follow-up path.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbered">
+      <div class="kicker"><span class="n">02</span><h2>Instant response workflow</h2></div>
+      <p>The moment a lead submits the site's contact form, the system fires a client notification, a thank-you text, and a thank-you email — no one has to be watching the inbox.</p>
+      <div class="workflow-card">
+        <div class="wf-head">
+          <h3>TintXperts — Website form workflow</h3>
+          <span class="live-pill">Live workflow</span>
+        </div>
+        <img src="images/workflow-1-instant-response.png" alt="GoHighLevel workflow builder showing the TintXperts website form automation: Form Submitted trigger leading to Internal Notification, Thank You SMS, and Thank You Email steps." loading="lazy">
+      </div>
+      <div class="captions">
+        <div class="caption">
+          <h4>Team notified instantly</h4>
+          <p>An internal alert fires the moment a form comes in, so no lead sits unnoticed.</p>
+        </div>
+        <div class="caption">
+          <h4>Dual-channel thank-you</h4>
+          <p>The lead gets an SMS and an email in the same breath, meeting them wherever they check first.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbered">
+      <div class="kicker"><span class="n">03</span><h2>Quote requests, followed to resolution</h2></div>
+      <p>A quote-request lead moves through pipeline updates, a confirmation email, task creation, and a team assignment — then waits 24 hours and checks whether the lead has responded before deciding what happens next.</p>
+      <div class="workflow-card">
+        <div class="wf-head">
+          <h3>Quick Quote Form Submitted</h3>
+          <span class="live-pill">Live workflow</span>
+        </div>
+        <img src="images/workflow-2-quote-request.png" alt="GoHighLevel workflow builder showing the Quick Quote Form Submitted automation: trigger moves the opportunity to the Inquiry stage, sends a confirmation email, creates a task, assigns the lead, sends an internal notification, waits 24 hours, then checks response status." loading="lazy">
+      </div>
+    </section>
+
+    <section class="numbered">
+      <div class="kicker"><span class="n">04</span><h2>Multi-trigger nurture with open-tracking</h2></div>
+      <p>One nurture sequence can be entered from three different triggers — a new contact, a Facebook ad lead, or a manual tag — then checks whether each email was opened and routes the contact down a "Yes," "No," or "None" path accordingly.</p>
+      <div class="workflow-card">
+        <div class="wf-head">
+          <h3>Multi-source welcome &amp; nurture sequence</h3>
+          <span class="live-pill">Live workflow</span>
+        </div>
+        <img src="images/workflow-3-nurture.png" alt="GoHighLevel workflow builder showing a multi-trigger nurture sequence: three triggers (Contact Created, FB Ads, Contact Tag) converge into a Welcome Email, a wait step, Email 1, another wait, then a conditional branch on whether Email 1 was opened, splitting into Yes, No, and None paths." loading="lazy">
+      </div>
+      <div class="captions">
+        <div class="caption">
+          <h4>One workflow, three entry points</h4>
+          <p>Contact created, ad-driven interest, or a manual tag — all leads land in the same nurture logic.</p>
+        </div>
+        <div class="caption">
+          <h4>Opens decide the next step</h4>
+          <p>A conditional check on "Email Opened" splits contacts into Yes / No / None paths for smarter follow-up.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbered">
+      <div class="kicker"><span class="n">05</span><h2>Booking workflow with conditional branching</h2></div>
+      <p>The most advanced build in this system: a booking workflow that branches on whether an email was opened, assigns owners, sends internal and user-facing notifications, then re-checks for a booking tag before deciding the final path — email follow-up, SMS follow-up, or a fresh opportunity.</p>
+      <div class="workflow-card">
+        <div class="wf-head">
+          <h3>Booking Workflow — full decision tree</h3>
+          <span class="live-pill">Live workflow</span>
+        </div>
+        <img src="images/workflow-4-booking.png" alt="GoHighLevel workflow builder showing the full Booking Workflow decision tree, branching on whether an email was opened into two paths (assign user / internal notification / user email notification vs. create or update opportunity / not-opened follow-ups), each waiting and then checking a booking tag before a final branch into SMS, email, or a new opportunity." loading="lazy">
+      </div>
+    </section>
+
+    <div class="closing">
+      <h3>What this setup actually gets a client</h3>
+      <p>The screenshots above are working automations, not demo templates — this is the exact structure clients are running today for services like custom quotes, appointment bookings, and ad-driven lead capture. The value isn't the workflow diagram; it's what stops happening once it's live.</p>
+      <ul>
+        <li>No lead waits for a human to notice the form submission</li>
+        <li>Every lead gets both an email and an SMS touch, automatically</li>
+        <li>Follow-up adapts based on real behaviour, not a fixed timer</li>
+        <li>The right team member is notified and assigned without manual routing</li>
+      </ul>
+    </div>
+
+    <footer>
+      <div>
+        <p class="name">AbdSobur</p>
+        <p class="role">Local SEO &amp; Marketing Automation Specialist — The Uptrenders</p>
+      </div>
+      <div class="right">
+        <p>Built and maintained in GoHighLevel</p>
+        <p>Available for custom lead-nurture builds</p>
+      </div>
+    </footer>
+
+  </div>
+</main>
+
+</body>
+</html>
